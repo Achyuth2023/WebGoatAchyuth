@@ -1,0 +1,23 @@
+name: test
+on:
+  push:
+    branches: [ master ]
+
+ 
+
+jobs:
+  name-of-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Directory Creation 
+        run: |
+          mkdir iasp_cicd && mkdir iasp_cicd/appcode
+      - name: Checkout client sourcecode
+        uses: actions/checkout@v3
+        with:
+         path: iasp_cicd/appcode
+     # - name: Checkout python(iasp) sourcecode
+     #   uses: actions/checkout@v3
+     #   with:
+     #    repository: my-org/my-tools  # repository name  , a seperate repository to be created for our iasp
+     #   path: iasp_cicd
